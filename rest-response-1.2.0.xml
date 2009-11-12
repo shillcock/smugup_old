@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.login.withHash</method>
+  <Login AccountType="Pro">
+    <Session id="24796f4ad552b3a9ccd88eacee1ed111"/>
+  </Login>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.images.getInfo</method>
+  <Image id="112136707" FileName="kids.jpg" Caption="" Keywords=" kids" Position="2" Date="2006-11-22 08:53:29" Format="JPG" Serial="0" Watermark="0" Size="87378" Width="640" Height="480" MD5Sum="a234ab01efe2775e9f69477831c3d3cf" LastUpdated="2006-12-08 19:20:15" OriginalURL="http://scottandwendy.smugmug.com/photos/112136707-O.jpg" LargeURL="http://scottandwendy.smugmug.com/photos/112136707-L.jpg" MediumURL="http://scottandwendy.smugmug.com/photos/112136707-M.jpg" SmallURL="http://scottandwendy.smugmug.com/photos/112136707-S.jpg" TinyURL="http://scottandwendy.smugmug.com/photos/112136707-Ti.jpg" ThumbURL="http://scottandwendy.smugmug.com/photos/112136707-Th.jpg" AlbumURL="http://scottandwendy.smugmug.com/gallery/2160061/1/112136707">
+    <Album id="2160061"/>
+  </Image>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.users.getTree</method>
+  <Categories>
+    <Category id="0" Name="Other"/>
+    <Category id="107153" Name="Archive">
+      <SubCategories>
+        <SubCategory id="244714" Name="2006">
+          <Albums>
+            <Album id="2071279" Title="Archive 2006 02"/>
+          </Albums>
+        </SubCategory>
+        <SubCategory id="259734" Name="Printed"/>
+      </SubCategories>
+      <Albums>
+        <Album id="2048661" Title="Archive - 2006 - 01"/>
+        <Album id="2042689" Title="TreoKeepers"/>
+      </Albums>
+    </Category>
+    <Category id="3" Name="Art"/>
+    <Category id="9" Name="Family">
+      <SubCategories>
+        <SubCategory id="243953" Name="Renee">
+          <Albums>
+            <Album id="2240067" Title="Grand Canyon"/>
+            <Album id="2091907" Title="Wildflower Triathlon 2006"/>
+          </Albums>
+        </SubCategory>
+      <Albums>
+        <Album id="2143899" Title="Arroyo Seco 2006"/>
+        <Album id="2045892" Title="Point Lobos 2005"/>
+      </Albums>
+    </Category>
+    <Category id="45" Name="Friends">
+      <SubCategories>
+        <SubCategory id="243947" Name="Amy">
+          <Albums>
+            <Album id="2029045" Title="Startfish"/>
+          </Albums>
+        </SubCategory>
+    </Category>
+    <Category id="106705" Name="Photo Books">
+      <Albums>
+        <Album id="2029028" Title="Jordan Week 1"/>
+      </Albums>
+    </Category>
+  </Categories>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.albums.get</method>
+  <Albums>
+    <Album id="2240104" Title="Repos">
+      <Category id="105377" Name="Scott"/>
+    </Album>
+    <Album id="2240067" Title="Grand Canyon">
+      <Category id="9" Name="Family"/>
+      <SubCategory id="243953" Name="Renee"/>
+    </Album>
+  </Albums>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.categories.get</method>
+  <Categories>
+    <Category id="0" Title="Other"/>
+    <Category id="41" Title="Airplanes"/>
+    <Category id="107153" Title="Archive"/>
+  </Categories>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.subcategories.getAll</method>
+  <SubCategories>
+    <SubCategory id="243951" Title="Shillcock">
+      <Category id="9"/>
+    </SubCategory>
+    <SubCategory id="243952" Title="Bluhm">
+      <Category id="9"/>
+    </SubCategory>
+    <SubCategory id="261738" Title="BBRE">
+      <Category id="106706"/>
+    </SubCategory>
+  </SubCategories>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.subcategories.get</method>
+  <SubCategories>
+    <SubCategory id="243951" Title="Shillcock"/>
+    <SubCategory id="243952" Title="Bluhm"/>
+  </SubCategories>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.albums.getInfo</method>
+  <Album>
+    <Album id="2029028" Position="75" ImageCount="29" Title="Jordan Week 1" Description="" Keywords="" Public="1" Password="" PasswordHint="" Printable="1" Filenames="0" Comments="1" External="1" Originals="1" EXIF="1" Share="1" SortMethod="Position" SortDirection="0" LastUpdated="2006-10-20 14:47:18" FamilyEdit="0" FriendEdit="0" HideOwner="0" CanRank="1" Larges="1" Clean="0" Protected="0" Watermark="0" DefaultColor="0" ProofDays="0" Backprinting="" Header="0">
+      <Highlight id="104033596"/>
+      <Category id="106705"/>
+      <SubCategory id="0"/>
+      <Community id="0"/>
+      <Watermark id="0"/>
+      <Template id="0"/>
+    </Album>
+  </Album>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.images.get</method>
+  <Images>
+    <Image id="104033596"/>
+    <Image id="104033606"/>
+  </Images>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.images.get</method>
+  <Images>
+    <Image id="104033596" FileName="jordan_w1b_01.png" Caption="" Keywords=" jordan" Position="1" Date="2006-10-20 14:45:14" Format="PNG" Serial="0" Watermark="0" Size="371604" Width="792" Height="612" MD5Sum="40962d06b2bce7dc006c942b49203e2a" LastUpdated="2006-10-20 14:45:30" OriginalURL="http://scottandwendy.smugmug.com/photos/104033596-O.png" LargeURL="http://scottandwendy.smugmug.com/photos/104033596-L.jpg" MediumURL="http://scottandwendy.smugmug.com/photos/104033596-M.jpg" SmallURL="http://scottandwendy.smugmug.com/photos/104033596-S.jpg" TinyURL="http://scottandwendy.smugmug.com/photos/104033596-Ti.jpg" ThumbURL="http://scottandwendy.smugmug.com/photos/104033596-Th.jpg" AlbumURL="http://scottandwendy.smugmug.com/gallery/2029028/1/104033596">
+      <Album id="2029028"/>
+    </Image>
+    <Image id="104033606" FileName="jordan_w1b_02.png" Caption="" Keywords=" jordan" Position="2" Date="2006-10-20 14:45:18" Format="PNG" Serial="0" Watermark="0" Size="524162" Width="792" Height="612" MD5Sum="6974f74ccd92c23133759cafdc75fb7c" LastUpdated="2006-10-20 14:45:27" OriginalURL="http://scottandwendy.smugmug.com/photos/104033606-O.png" LargeURL="http://scottandwendy.smugmug.com/photos/104033606-L.jpg" MediumURL="http://scottandwendy.smugmug.com/photos/104033606-M.jpg" SmallURL="http://scottandwendy.smugmug.com/photos/104033606-S.jpg" TinyURL="http://scottandwendy.smugmug.com/photos/104033606-Ti.jpg" ThumbURL="http://scottandwendy.smugmug.com/photos/104033606-Th.jpg" AlbumURL="http://scottandwendy.smugmug.com/gallery/2029028/1/104033606">
+      <Album id="2029028"/>
+    </Image>
+  </Images>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.albumtemplates.get</method>
+  <AlbumTemplate>
+    <AlbumTemplate id="2" AlbumTemplateName="smugmug default" SortMethod="Position" SortDirection="0" Public="1" Password="" PasswordHint="" Printable="1" Header="0" Filenames="0" Comments="1" External="1" Originals="1" Larges="1" Clean="0" EXIF="1" Share="1" Protected="0" Watermark="0" FriendEdit="0" FamilyEdit="0" HideOwner="0" DefaultColor="1" Geography="1" CanRank="1" ProofDays="0" Backprinting="">
+      <Template id="0"/>
+      <Community id="0"/>
+      <Watermark id="0"/>
+    </AlbumTemplate>
+  </AlbumTemplate>
+</rsp>
+
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+  <method>smugmug.users.getTree</method>
+  <Categories>
+    <Category id="0" Name="Other"/>
+    <Category id="107153" Name="Archive">
+      <SubCategories>
+        <SubCategory id="244714" Name="2006">
+          <Albums>
+            <Album id="2071279" Position="34" ImageCount="177" Title="Archive 2006 02" Description="" Keywords="" Public="0" Password="web4me" PasswordHint="" Printable="1" Filenames="1" Comments="1" External="1" Originals="1" EXIF="1" Share="1" SortMethod="DateTimeOriginal" SortDirection="0" LastUpdated="2006-10-31 01:26:23" FamilyEdit="0" FriendEdit="0" HideOwner="0" CanRank="1" Larges="1" Clean="0" Protected="0" Watermark="0" DefaultColor="0" ProofDays="0" Backprinting="" Header="1">
+              <Highlight id="0"/>
+              <Community id="0"/>
+              <Watermark id="0"/>
+              <Template id="0"/>
+            </Album>
+          </Albums>
+        </SubCategory>
+        <SubCategory id="259734" Name="Printed"/>
+      </SubCategories>
+    </Category>
+    <Category id="60" Name="Zoos"/>
+  </Categories>
+</rsp>

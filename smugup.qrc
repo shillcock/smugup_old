@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/smugup" >
+        <file>images/album-icon.png</file>
+        <file>images/album.png</file>
+        <file>images/category-icon.png</file>
+        <file>images/category.png</file>
+        <file>images/connect.png</file>
+        <file>images/disconnect.png</file>
+        <file>images/home.png</file>
+        <file>images/image-icon.png</file>
+        <file>images/log-icon.png</file>
+        <file>images/nav.png</file>
+        <file>images/nav_blue.png</file>
+        <file>images/subcategory-icon.png</file>
+        <file>images/subcategory.png</file>
+        <file>images/sync-icon.png</file>
+    </qresource>
+</RCC>

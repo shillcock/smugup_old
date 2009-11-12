@@ -1,0 +1,159 @@
+/*-*-mode:c++-*-*/
+/*!
+    \page sslguide.html
+    \title Guide to SSL certificates and certificate authorities
+
+    \tableofcontents
+
+    \section1 What SSL and QtSslSocket are all about
+
+    SSL (Secure Socket Layer) is a standard protocol providing a
+    secure network connection. As the name suggests, SSL is a layer
+    that works on top of TCP.
+
+    Firstly, SSL defines methods for verifying the identity of the
+    peer that you are either connecting to, or accepting a connection
+    from. Secondly, it describes methods for the client and server
+    applications to encrypt the data they are sending to each other.
+
+    QtSslSocket defines an easy-to-use class that hides the details of
+    the rather complex SSL protocol. Some knowledge about SSL concepts
+    is still required before writing SSL enabled applications. This
+    document provides basic guidelines for an SSL application
+    developer.
+
+    \section1 What is an SSL library?
+
+    An SSL library is a set of tools that allows encrypted
+    communication using SSL. Ideally, the library contains functions
+    that allow such communication in a semi-transparent way, so that
+    the programmer can communicate safely with little knowledge of the
+    internals of the protocol itself.
+
+    QtSslSocket is a class that provides an easy-to-use API for
+    OpenSSL, which is the de facto standard open source SSL library.
+
+    \section1 How do clients and servers communicate using SSL?
+
+    When an SSL client connects to an SSL server, the two peers
+    automatically enter into a negotiation phase before any regular
+    communication takes place. This phase is called the "handshake"
+    for short.
+
+    The handshake starts with the server sending the client its
+    certificate. The client then checks the validity of the server's
+    certificate against a range of certification authorities, before
+    verifying the identity of the server by inspecting some of the
+    fields in the certificate, such as the hostname. If the client
+    accepts the server's identity, it might optionally send a client
+    certificate to the server, which the server can check against its
+    own certification authorities. This way, both the server and
+    client can be assured that the host they are communicating with is
+    authentic.
+
+    Once the two peers have successfully verified the identity of
+    each other, they proceed to agree on a cipher to use for encrypting
+    data. They then seed their encryption algorithms. At this point,
+    the handshake is complete, and the peers can start sending
+    encrypted data to each other.
+
+    \target certificate
+    \section2 What is a certificate?
+
+    A certificate is a document which describes a network host's
+    identity. It contains, among others, the DNS name of the host, the
+    name and ID of the certificate issuer, an expiry date and a
+    digital signature.
+
+    Certificates are created together with a host's private key. The
+    certificate is either self-signed or signed by a certification
+    authority (CA). Safe communication requires the certificate to be
+    signed by a CA. Basically, a self-signed certificate can never be
+    used to verify the identity of a server, but it can be used to
+    seed the ciphers used to encrypt communication. For this reason,
+    self-signed certificates are often used in test systems, but
+    seldom in production systems.
+
+    Official CAs sign public certificates for a certain price. Two
+    well-known official CAs are Thawte (http://www.thawte.com/) and
+    Verisign (http://www.verisign.com/). To obtain a CA signed
+    certificate, a "certificate request" (unsigned certificate) is
+    generated and posted to certain forms on the CAs' home pages.
+
+    All major SSL applications, such as Mozilla, Outlook, and Eudora
+    Mail, access a local database containing the certificates of the
+    official CAs. CA signed certificates can only be verified by
+    this local database that contains trusted CA certificates.
+
+    It is quite possible to set up one's own local CA and use that to
+    sign servers' certificates. Although this avoids the expense of
+    using an official CA, all clients must then have a local copy of
+    your own CA's SSL certificate.
+
+    \target authorities
+    \section2 What is a certification authority (CA)?
+
+    A certification authority (CA) is a trusted third party that
+    two Internet hosts can use to verify the identity of their peers.
+
+    Every CA has its own SSL certificate, and this certificate must be
+    known for all applications that use the CA to verify certificates.
+    Most operating systems are bundled with a file containing such
+    certificates.
+
+    QtSslSocket needs to know the path to the local certificates file,
+    or to a directory containing several such files if there's more
+    than one. See QtSslSocket::setPathToCACertFile() and
+    QtSslSocket::setPathToCACertDir().
+
+    \section2 What is a private key?
+
+    A private key is a string of arbitrary data that is secret for the
+    host on which it was generated. This key is used to encrypt the
+    data sent from the host. No two SSL hosts should share the same
+    private key, as this greatly degrades the level of security. If
+    the private key is compromised, the encrypted link will no longer
+    be safe.
+
+    The private key ensures that the data transmitted to and from the
+    host is infeasible to decode even if the algorithms used to
+    produce the cipher are known.
+
+    \section1 How to create a private key and a certificate
+
+    OpenSSL is bundled with a tool for performing several tasks
+    related to SSL, such as generating keys and certificates. This
+    tool is called \c openssl on UNIX or \c openssl.exe on Windows.
+
+    The following command generates a 1024 bit RSA private key and a
+    certificate request that expires after 365 days:
+
+    \code
+    openssl.exe req -newkey rsa:1024 -keyout server.key -nodes -days 365 -out server.csr
+    \endcode
+
+    Inside the server.csr file there will be a line saying "BEGIN
+    CERTIFICATE REQUEST". This file cannot be used in an SSL server
+    until it has been signed. For test systems, self-signed
+    certificates are convenient, although they are insecure. Adding
+    the argument -x509 to the \c openssl tool will generate a
+    self-signed certificate:
+
+    \code
+    openssl.exe req -x509 -newkey rsa:1024 -keyout server.key -nodes -days 365 -out server.crt
+    \endcode
+
+    Both the key and certificate are encoded in a format called PEM,
+    and they can be used directly with QtSslSocket. A server would do
+    the following to initialize its SSL socket with the newly
+    generated key and certificate:
+
+    \code
+    QtSslSocket *socket = new QtSslSocket(QtSslSocket::Server);
+    socket->setPathToPrivateKey("server.key");
+    socket->setPathToCertificate("server.crt");
+    \endcode
+
+    For more information about OpenSSL, please refer to
+    http://www.openssl.org/.
+*/
